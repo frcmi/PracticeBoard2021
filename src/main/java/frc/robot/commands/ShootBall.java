@@ -26,14 +26,30 @@ import frc.robot.subsystems.Limelight;
  */
 public class ShootBall extends SequentialCommandGroup {
 
-    public ShootBall(Shooter shooter,Limelight limelight){
+    public ShootBall(Shooter shooter, Intake intake, Turret turret, Limelight limelight){
         addCommands(
+            new TimedIntake(intake, -1.0, 0.1, IntakeMode.INTERNAL),
             new WaitCommand(0.1),
+            new AlignTurret(turret, limelight),
             new ShooterRev(shooter, limelight),
+            new AlignTurret(turret, limelight),
+            new TimedIntake(intake, 1.0, 0.12, IntakeMode.INTERNAL),
+            new AlignTurret(turret, limelight),
             new ShooterRev(shooter, limelight),
+            new AlignTurret(turret, limelight),
+            new TimedIntake(intake, 1.0, 0.12, IntakeMode.INTERNAL),
+            new AlignTurret(turret, limelight),
             new ShooterRev(shooter, limelight),
+            new AlignTurret(turret, limelight),
+            new TimedIntake(intake, 1.0, 0.12, IntakeMode.INTERNAL),
+            new AlignTurret(turret, limelight),
             new ShooterRev(shooter, limelight),
-            new ShooterRev(shooter, limelight)
+            new AlignTurret(turret, limelight),
+            new TimedIntake(intake, 1.0, 0.12, IntakeMode.INTERNAL),
+            new AlignTurret(turret, limelight),
+            new ShooterRev(shooter, limelight),
+            new AlignTurret(turret, limelight),
+            new TimedIntake(intake, 1.0, 0.12, IntakeMode.INTERNAL)
         );
     }
 }
