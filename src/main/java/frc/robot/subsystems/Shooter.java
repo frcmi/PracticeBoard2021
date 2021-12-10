@@ -9,6 +9,7 @@ import frc.robot.util.Logger;
 
 import static frc.robot.Constants.*;
 
+//fix it so that you don't use vex robotics
 import com.revrobotics.CANEncoder;
 import com.revrobotics.CANPIDController;
 import com.revrobotics.CANSparkMax;
