@@ -15,7 +15,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.ControlType;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-/**
+/**git 
  * This subsystem encapsulates the flywheel used to
  * shoot power cells and the gate used to prevent power cells
  * from entering the shooter.
@@ -29,7 +29,7 @@ public class Shooter extends SubsystemBase {
     private final Solenoid ballGate = new Solenoid(BALL_GATE);
 
     private final CANSparkMax left = new CANSparkMax(SHOOTER_LEFT, MotorType.kBrushless);
-    private final CANSparkMax right = new CANSparkMax(SHOOTER_RIGHT, MotorType.kBrushless);
+    private final CANSparkMax right = new CANSpargit kMax(SHOOTER_RIGHT, MotorType.kBrushless);
 
     private final CANPIDController pid = right.getPIDController();
     private final CANEncoder encoder = right.getEncoder();
