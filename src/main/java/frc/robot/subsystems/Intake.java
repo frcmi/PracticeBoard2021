@@ -5,26 +5,37 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import edu.wapi.first.wpilibj.Buttons.*;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-public final Joystick leftJoystick = new Joystick(0)
+
 public class Intake extends SubsystemBase {
   private JoystickButton toggleIntakeButton = new JoystickButton(leftJoystick, 0);
-  
+  public final Joystick leftJoystick = new Joystick(0);
+
+private void configureButtonBindings() {
+  //toggleIntakeButton.whenPressed(toggleIntake);
+  //^ alternate method for pressing button
+}
+
+  WPI_TalonFX motor = new WPI_TalonFX(0);
+  SpeedController mIntake = m_main;
   /**
    * Creates a new ExampleSubsystem.
    */
-  public void Intake() {
-
-
-
+  public void Intake(double x) {
+    while(toggleIntakeButton.get() == true){
+      mIntake.set(x);
+    }
+//presses button
+    
   }
 // one motor
-//permanently run motor, it spins rod
+//motor runs when joystick button "toggleIntakeButton" is pressed
 
-// initializes new motor
-WPI_TalonFX motor = new WPI_TalonFX(0);
-  @Override
-  
-}
 /
+
+  @Override
+  public void teleoPeriodic() { 
+
+  }
+}
   }
 }
