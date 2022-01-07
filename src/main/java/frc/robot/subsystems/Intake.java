@@ -5,9 +5,16 @@ public class Intake extends SubsystemBase {
   /**
    * Creates a new ExampleSubsystem.
    */
-  public Intake() {
-
+  public void intake() {
+      while(toggleIntakeButton.get() == true){
+      mIntake.set(1.0);
+    }
   }
+//presses button
+// one motor
+//motor runs when joystick button "toggleIntakeButton" is pressed
+
+
 
   @Override
   public void periodic() {
