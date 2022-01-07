@@ -10,7 +10,6 @@ public class Shooter extends SubsystemBase {
     WPI_TalonFX m_main = new WPI_TalonFX(4);
     SpeedController m_shooter = m_main;
     private JoystickButton theStick = new JoystickButton(leftJoystick,2);
-    public final Joystick leftJoystick = new Joystick(2);
     //making a button
     @Override
     public void teleopPeriodic() { //runs every 20 ms

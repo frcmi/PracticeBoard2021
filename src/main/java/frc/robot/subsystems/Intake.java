@@ -7,13 +7,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 
 public class Intake extends SubsystemBase {
-  private JoystickButton toggleIntakeButton = new JoystickButton(leftJoystick, 0);
   public final Joystick leftJoystick = new Joystick(0);
-
-private void configureButtonBindings() {
-  //toggleIntakeButton.whenPressed(toggleIntake);
-  //^ alternate method for pressing button
-}
+  private JoystickButton toggleIntakeButton = new JoystickButton(leftJoystick, 0);
 
   WPI_TalonFX motor = new WPI_TalonFX(0);
   SpeedController mIntake = m_main;
@@ -25,8 +20,6 @@ private void configureButtonBindings() {
       mIntake.set(x);
     }
 //presses button
-    
-  }
 // one motor
 //motor runs when joystick button "toggleIntakeButton" is pressed
 
@@ -35,7 +28,5 @@ private void configureButtonBindings() {
   @Override
   public void teleoPeriodic() { 
 
-  }
-}
   }
 }
