@@ -8,9 +8,10 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
 import frc.robot.subsystems.Pneumatics;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class InvertSolenoid extends CommandBase {
-  private Solenoid solenoid;
+  private DoubleSolenoid solenoid;
   private Pneumatics pneumatics;
 
   /** Creates a new SolenoidTEST. */
@@ -26,7 +27,12 @@ public class InvertSolenoid extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    solenoid.set(!solenoid.get());
+    if (solenoid.get() == DoubleSolenoid.Value.kForward) {
+      solenoid.set(DoubleSolenoid.Value.kReverse);
+    } else {
+      solenoid.set(DoubleSolenoid.Value.kForward);
+    }
+
   }
 
   // Called once the command ends or is interrupted.

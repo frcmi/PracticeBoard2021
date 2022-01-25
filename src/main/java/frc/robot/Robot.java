@@ -5,6 +5,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj.Joystick;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -14,13 +16,18 @@ import edu.wpi.first.wpilibj.TimedRobot;
  */
 public class Robot extends TimedRobot {
   public static RobotContainer container = new RobotContainer();
+  public Joystick leftJoystick = new Joystick(0);
+  private JoystickButton toggleIntakeButton = new JoystickButton(leftJoystick, 0);
 
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
    */
   @Override
-  public void robotInit() {}
+  public void robotInit() {
+
+    toggleIntakeButton.whenPressed(container.invertSolenoid);
+  }
 
   /** This function is run once each time the robot enters autonomous mode. */
   @Override
